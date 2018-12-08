@@ -2,23 +2,29 @@ package com.epam.mlm;
 
 public class Runner {
     public static void main(String[] args) {
-        Agent agent = Agent.createAgent("Smit");
-        Agent agent1 = Agent.createAgent("Smit1");
-        Agent agent2 = Agent.createAgent("Smit2");
-        Agent agent3 = Agent.createAgent("Smit3");
-        Agent agent4 = Agent.createAgent("Smit4");
-        Agent agent5 = Agent.createAgent("Smit5");
-        Agent agent6 = Agent.createAgent("Smit6");
-        Agent agent7 = Agent.createAgent("Smit7");
-        Agent agent8 = Agent.createAgent("Smit8");
-        Agent agent9 = Agent.createAgent("Smit9");
+        Employee employee = Employee.createEmployee("Smit");
+        Employee employee1 = new Employee("Smit1");
+        Employee employee2 = Employee.createEmployee("Smit2");
+        Employee employee3 = Employee.createEmployee("Smit3");
+        Employee employee4 = Employee.createEmployee("Smit4");
+        Employee employee5 = Employee.createEmployee("Smit5");
+        Employee employee6 = Employee.createEmployee("Smit6");
+        Employee employee7 = Employee.createEmployee("Smit7");
+        Employee employee8 = Employee.createEmployee("Smit8");
+        Employee employee9 = Employee.createEmployee("Smit9");
+
+        employee3.addChild(employee6, employee7, employee8);
+        employee4.addChild(employee9);
+        employee1.addChild(employee3, employee4);
+        employee2.addChild(employee5);
+        employee.addChild(employee1, employee2);
+
+        employee7.printAllParent(employee7.getParentId());
+        employee1.printAllChild();
 
 
-        agent3.addChild(agent6, agent7, agent8);
-        agent4.addChild(agent9);
-        agent1.addChild(agent3, agent4);
-        agent2.addChild(agent5);
-        agent.addChild(agent1, agent2);
-        System.out.println(agent.findChild(5));
+
+
+
     }
 }
